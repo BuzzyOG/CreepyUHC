@@ -1,6 +1,8 @@
 package dev.creeper.uhc;
 
+import dev.creeper.uhc.Commands.SpecTP;
 import dev.creeper.uhc.Listeners.DeathListeners;
+import dev.creeper.uhc.Listeners.MiscListeners;
 import dev.creeper.uhc.Teams.AllTeams.*;
 import dev.creeper.uhc.Teams.TeamInterface;
 import dev.creeper.uhc.Utilities.GameState;
@@ -59,9 +61,12 @@ public final class Core extends JavaPlugin {
         allTeams.add(new Team8());
         allTeams.add(new Team9());
         allTeams.add(new Team10());
+
+        getCommand("spectate").setExecutor(new SpecTP());
     }
 
     public void registerEvents() {
         getServer().getPluginManager().registerEvents(new DeathListeners(), this);
+        getServer().getPluginManager().registerEvents(new MiscListeners(), this);
     }
 }

@@ -1,3 +1,8 @@
 name: CreepyUHC
 version: 1.0
 main: dev.creeper.uhc.Core
+description: Open source 'Ultra Hardcore' plugin.
+commands:
+  spectate:
+    description: Allows spectators to teleport to players.
+    aliases: ["spec", "s"]

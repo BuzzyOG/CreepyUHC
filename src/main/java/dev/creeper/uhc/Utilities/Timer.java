@@ -43,7 +43,7 @@ public class Timer implements Runnable {
 
             if (Core.getTicks() == 0) {
                 Core.changeState(GameState.NOPVP);
-                Bukkit.broadcastMessage("§7The round has begun! There is §c" + no_pvp_timer + "")
+                Bukkit.broadcastMessage("§7The round has begun! There is §c" + no_pvp_timer + "");
                 // todo
                 // begin no pvp stage
             }
