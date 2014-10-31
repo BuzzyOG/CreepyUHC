@@ -27,7 +27,6 @@ public class DeathListeners implements Listener {
         TeamManager.getTeam("Spectators").getMembers().add(p.getName());
         for (Player online : Bukkit.getOnlinePlayers()) {
             online.playSound(online.getLocation(), Sound.AMBIENCE_THUNDER, 1, 10);
-            online.sendMessage("§7They died approximately §c" + online.getLocation().distance(p.getLocation()) + " §7blocks from you!" );
         }
 
         if (playersTeam.getMembers().isEmpty()) {
@@ -36,6 +35,11 @@ public class DeathListeners implements Listener {
 
         if (p.getKiller() == null) {
             Bukkit.broadcastMessage("§7The player §c" + p.getName() + " §7from " + playersTeam.getTeamName() + " §7has died!");
+            for (Player left : Bukkit.getOnlinePlayers()) {
+                // todo
+                // check if killer's team is only team left
+                // end game if so
+            }
 
         } else {
             Player killer = p.getKiller();
